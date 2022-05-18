@@ -18,6 +18,7 @@ xoppmerge() {
                         sed '1,4d;$d' "${arr[i]}" >> merged
                 done
         fi
+	sleep 0.25
         echo "</xournal>" >> merged
 }
 
@@ -33,8 +34,11 @@ xoppdecompress() {
 xoppallinone() {
         array=("$@")
         xoppdecompress "${array[@]}"
+	sleep 0.25
         xoppmerge  "${array[@]}"
+	sleep 0.25
         xoppcompress "${array[@]}"
+	sleep 0.25
         xoppcompress  "merged"
 }
 #end
