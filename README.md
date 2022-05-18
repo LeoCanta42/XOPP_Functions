@@ -6,6 +6,7 @@ The main "problem" was that i hadn't found a way to merge more xopp file into on
 
 # Setup
 You have to decide A or B:
+
 A) If you want these command permanent in bash (presuming that you have something like git bash, wsl or bash shell in general):
   1) just edit the ~/.bashrc file and add all the script at the end of the file
   2) use the command:   source ~/.bashrc        (be sure that you are in bash, with wsl I had some problems because I had to execute bash before the                                                          execution of this command and all the functions in general)
@@ -21,11 +22,17 @@ Now that you have made your choice (A/B) you can run your command from that bash
 # xoppdecompress listoffilesxopp
   the command take a list of xopp files (even one) and decompress the file in an xml format, because xournal file are gzip compressed and you can decompress   them in xml. VERY IMPORTANT: you have to write the name of the file without .xopp extension, just the complete name.
 
+ex:     xoppdecompress file1 file2 file3    --- output: file1 file2 file3  (xml format)
+
 # xoppcompress listoffilexml
   the command take a list of xopp files (even one) and compress the file (xml decompressed before) in .xopp format, compressing with gzip.
 
+ex:     xoppcompress file1 file2 file3      --- output: file1.xopp file2.xopp file3.xopp
 # xoppmerge listoffilesxopptoappend
   the command take a list of file(in decompressed form so xml) but be sure to put files in the order you want to have in the final merged file, because the     fuction will append all the pages of the files into a file named merged and this will be done in order of how you passed the file in argument.
- 
+
+ex:   xoppmerge file1 file3 file2         --- output: merged   (a file that concatenate file1 file3 file2 in order)
  # xoppallinone listoffilesxopp
   this function is a complete function that take a list of xopp files (remember without .xopp extension) and automaticcaly decompress all the files, merge     all the files following the order they were passed and compress all the files. At the end you will have all your xopp files unchanged and a merged.xopp       that contains a merge of all files.
+
+ex: xoppallinone file3 file1 file2    --- output: previous file not modified and merged.xopp
