@@ -34,7 +34,10 @@ Now that you have made your choice (A/B) you can run your command from that bash
   this function is a complete function that take a list of .xopp files and automaticcaly decompress all the files, merge the files following the order they were passed and compress all. At the end you will have all your xopp files unchanged and a merged.xopp that contains a merge of all files.
   ex: xoppallinone file3.xopp file1.xopp file2.xopp    --- output: previous file not modified and merged.xopp (in order file3,1,2 in merge)
 # xoppupdatenotes_appendpdf
-  this function
-
+  this function take a .xopp and a .pdf (in this order). Take this scenario: you have different pdf slide where you are taking notes and in the end you want every set of slides(from different pdfs) merged in one pdf with your notes. So maybe you take notes for the first lesson and you update your main pdf every new set of slides, to append new set with notes.
+  This is the objective, it takes the .xopp of the new notes of the pdf where you are taking notes and the main pdf where to append.
+  ex: xoppupdatenotes_appendpdf file1.xopp main.pdf     --- output: main.pdf(with appended the file1.xopp exported in pdf)
 # xoppupdatenotes_samepdf
-  
+  this function take a .xopp and a .pdf (in this order). Take this scenario: you have a book in pdf where you take notes lesson by lesson. Every time you want to open xournal on that pdf and take notes in the new explained part of the book and save the main pdf with new notes.
+  This is the objective, it takes the .xopp of the new notes of the pdf book and book pdf where to update.
+  ex: xoppupdatenotes_samepdf file1.xopp main.pdf     --- output: main.pdf(with new notes in same pdf)
